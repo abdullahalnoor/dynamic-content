@@ -16,3 +16,7 @@
 // });
 
 Route::get('/','WelcomeController@index');
+
+Route::resource('/category','CategoryController');
+Route::post('/category/delete','CategoryController@delete')->name('category.delete');
+Route::post('/category/update','CategoryController@updateData')->name('category.updateData');

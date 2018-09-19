@@ -134,6 +134,7 @@
       })
       .done(function(data){
         console.log(data);
+        $("#modals #categoryEditModal").modal("hide");
       })
       .fail(function(err){
         console.log(err);
@@ -144,6 +145,7 @@
   });
 
 </script>
+
 
 
 

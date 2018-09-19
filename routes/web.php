@@ -20,3 +20,9 @@ Route::get('/','WelcomeController@index');
 Route::resource('/category','CategoryController');
 Route::post('/category/delete','CategoryController@delete')->name('category.delete');
 Route::post('/category/update','CategoryController@updateData')->name('category.updateData');
+
+
+Route::get('/product','ProductController@index');
+Route::get('/product/create','ProductController@create')->name('product.create');
+Route::post('/product/create','ProductController@store');
+Route::get('/product/edit/{id}','ProductController@edit')->name('product.edit');

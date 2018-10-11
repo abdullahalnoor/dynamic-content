@@ -12,7 +12,7 @@
         </button>
       </div>
       <div class="card-body">
-        <table class="table">
+        <table class="table" id="refreshTable">
           <thead>
             <tr>
               <th>Name</th>
@@ -46,7 +46,9 @@
 
 <script>
   $(document).ready(function(){
-    $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') } });
+    $.ajaxSetup({
+       headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+        });
     // alert('dd')
     $("#categoryModal").on("click",function(e){
       e.preventDefault();
@@ -70,6 +72,7 @@
       .done(function(data){
         // console.log(data)
         $("#modals #categoryModal").modal("hide");
+        $("#refreshTable").load(location.href + " #refreshTable");
       })
       .fail(function(err){
         // console.log(err.responseJSON);
@@ -105,7 +108,8 @@
       .done(function(data){
         console.log(data)
         $("#deleteModal").modal("hide");
-        location.reload();
+        // location.reload();
+        $("#refreshTable").load(location.href + " #refreshTable");
       })
       .fail(function(err){
         
@@ -135,6 +139,8 @@
       .done(function(data){
         console.log(data);
         $("#modals #categoryEditModal").modal("hide");
+        $("#refreshTable").load(location.href + " #refreshTable");
+        // window.location.href = '{{route("product.index")}}';
       })
       .fail(function(err){
         console.log(err);
@@ -145,6 +151,12 @@
   });
 
 </script>
+
+
+
+
+
+
 
 
 

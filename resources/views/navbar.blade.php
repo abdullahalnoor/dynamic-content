@@ -1,22 +1,22 @@
 <ul class="nav nav-tabs|pills" id="navId">
   <li class="nav-item">
-    <a href="#tab1Id" class="nav-link active">Active</a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#tab2Id">Action</a>
-      <a class="dropdown-item" href="#tab3Id">Another action</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#tab4Id">Action</a>
-    </div>
+    <a href="{{route('category.index')}}" class="nav-link active">Category</a>
   </li>
   <li class="nav-item">
-    <a href="#tab5Id" class="nav-link">Another link</a>
+    <a href="{{route('product.index')}}" class="nav-link active">Product</a>
   </li>
   <li class="nav-item">
-    <a href="#" class="nav-link disabled">Disabled</a>
+    <a href="{{route('pricing.index')}}" class="nav-link active">Pricing</a>
   </li>
+
+  <li class="nav-item">
+    <a href="{{route('map')}}" class="nav-link active">Map</a>
+  </li>
+
+  <li class="nav-item">
+    <a href="{{route('google.captha')}}" class="nav-link active">Google Captha</a>
+  </li>
+
 </ul>
 
 <!-- Tab panes -->

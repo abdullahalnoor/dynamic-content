@@ -8,12 +8,12 @@
 
     <title>Laravel</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-
+    <link rel="stylesheet" href="{{asset('front/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/fontawesome-iconpicker.min.css')}}">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -61,6 +61,7 @@
     </div>
 
     <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('front/js/fontawesome-iconpicker.min.js')}}"></script>
     {{--
     <script src="{{asset('js/jquery.js')}}"></script> --}} @stack('script')
 

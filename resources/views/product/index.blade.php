@@ -11,7 +11,7 @@
           Add New
         </button>
       </div>
-      <div class="card-body">
+      <div class="card-body" id="refreshTable">
         <table class="table">
           <thead>
 
@@ -74,6 +74,7 @@
         })
         .done(function(data){
           console.log(data);
+          $("#refreshTable").load(location.href + " #refreshTable");
         })
         .fail(function(err){
           console.log(err.responseJSON.errors.image);
@@ -93,6 +94,10 @@
   });
 
 </script>
+
+
+
+
 
 
 

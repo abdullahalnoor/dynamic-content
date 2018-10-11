@@ -12,4 +12,7 @@ class WelcomeController extends Controller
             'contents'=> Content::all(),
         ]);
     }
+    public function googleMap(){
+        return view('map.index');
+    }
 }

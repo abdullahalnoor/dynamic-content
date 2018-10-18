@@ -17,6 +17,10 @@
     <a href="{{route('google.captha')}}" class="nav-link active">Google Captha</a>
   </li>
 
+  <li class="nav-item">
+    <a href="{{route('post.index')}}" class="nav-link active">Post</a>
+  </li>
+
 </ul>
 
 <!-- Tab panes -->

@@ -23,25 +23,68 @@
   @include('components.delete-modal')
 @endsection
  @push('script')
-
-
 <script>
-  var map;
-      function initMap() {
-        var uluru = {lat: 23.6895 , lng: 90.4841};
-        map = new google.maps.Map(document.getElementById('map'), {
-          center:uluru ,
-          zoom: 8,
-          
-        });
+  // Initialize and add the map
+  // function initMap() {
+    // The location of Uluru
+  //   var uluru = {lat: -25.344, lng: 131.036};
+  //   // The map, centered at Uluru
+  //   var map = new google.maps.Map(
+  //       document.getElementById('map'), {zoom: 4, center: uluru});
+  //   // The marker, positioned at Uluru
+  //   var marker = new google.maps.Marker({position: uluru, map: map});
+  // // }
+$(document).ready(function(){
+  // var uluru = {lat: -25.344, lng: 131.036};
+  var uluru = new google.maps.LatLng(-33.8665433,151.1956316);
 
-        var marker = new google.maps.Marker({position: uluru, map: map});
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: uluru
+  });
+  // var marker = new google.maps.Marker({
+  //   position: uluru,
+  //   map: map
+  // });
 
+  // var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+
+  var request = {
+    location: uluru,
+    radius: '500',
+    type: ['restaurant']
+  };
+ 
+  service = new google.maps.places.PlacesService(map);
+  
+  service.nearbySearch(request, callback);
+
+    function callback(results, status) {
+      console.log(results);
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        var place = results[i];
+        createMarker(results[i]);
+        }
       }
+    }
+
+
+})
 
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcGXUfX9HF_srPwsYIKwqQdC1mZaDB2pU&callback=initMap" async
-  defer></script>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY9YR1kuI7vib6-t2zeIhBtDFynNoJdA4&libraries=places"></script>
+
+
+
+
+
+
+
+
+
 
 
 

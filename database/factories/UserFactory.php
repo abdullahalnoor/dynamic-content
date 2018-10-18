@@ -29,3 +29,11 @@ $factory->define(App\Content::class, function (Faker $faker) {
         
     ];
 });
+
+$factory->define(App\Post::class, function (Faker $faker) {
+    return [
+        'title' => $faker->sentence,
+        'description' => $faker->text(300),
+        
+    ];
+});

@@ -18,6 +18,10 @@
 Auth::routes();
 Route::get('/','WelcomeController@index');
 
+Route::get('/post','PostController@index')->name('post.index');
+Route::get('/post/create','PostController@create')->name('post.create');
+Route::post('/post/create','PostController@store');
+
 Route::get('/captha','CapthaController@index')->name('google.captha');
 Route::post('/captha','CapthaController@store');
 

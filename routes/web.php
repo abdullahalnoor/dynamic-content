@@ -18,6 +18,13 @@
 Auth::routes();
 Route::get('/','WelcomeController@index');
 
+Route::get('/blog','BlogController@index')->name('blog.index');
+Route::get('/blog/create','BlogController@create')->name('blog.create');
+Route::post('/blog/create','BlogController@store');
+Route::get('/blog/edit/{id?}','BlogController@edit')->name('blog.edit');
+Route::post('/blog/edit/{id?}','BlogController@update');
+Route::delete('/blog/delete','BlogController@delete')->name('blog.delete');
+
 Route::get('/post','PostController@index')->name('post.index');
 Route::get('/post/create','PostController@create')->name('post.create');
 Route::post('/post/create','PostController@store');

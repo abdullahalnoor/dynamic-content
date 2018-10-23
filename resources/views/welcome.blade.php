@@ -12,7 +12,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('front/css/fontawesome-iconpicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/fontawesome-iconpicker.min.css')}}"> @stack('style')
+
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 

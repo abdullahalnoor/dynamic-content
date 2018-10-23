@@ -21,6 +21,10 @@
     <a href="{{route('post.index')}}" class="nav-link active">Post</a>
   </li>
 
+  <li class="nav-item">
+    <a href="{{route('blog.index')}}" class="nav-link active">Blog</a>
+  </li>
+
 </ul>
 
 <!-- Tab panes -->

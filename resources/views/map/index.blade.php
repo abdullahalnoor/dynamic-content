@@ -80,31 +80,134 @@ $(document).ready(function(){
 
 
 
+ <script>
+    function initMap() {
+      var options = {
+        center: {
+          lat: 23.8103,
+          lng: 90.4125
+        },
+        zoom: 8,
+      }
+      var map = new google.maps.Map(document.getElementById('map'), options);
+      /*
+            var marker = new google.maps.Marker({
+              position: {
+                lat: 23.8103,
+                lng: 90.4125
+              },
+              icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+              map: map
+            });
+            var infoWindow = new google.maps.infoWindow({
+              content: '<h4>Dahaka Mega City</h4>'
+            });
+
+            marker.addListener('click', function () {
+              infoWindow.open(map, marker)
+            });
+            */
+      //add marker
+      // addMarker({
+      //   lat: 23.8103,
+      //   lng: 90.4125
+      // });
+      // addMarker({
+      //   lat: 23.6238,
+      //   lng: 90.5000
+      // });
+      // addMarker({
+      //   lat: 23.4607,
+      //   lng: 91.1809
+      // })
+
+      // function addMarker(coords) {
+      //   var marker = new google.maps.Marker({
+      //     position: coords,
+      //     map: map,
+      //     icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+      //   })
+      // }
+
+      // addMarker({
+      //   coords: {
+      //     lat: 23.8103,
+      //     lng: 90.4125
+      //   },
+      //   icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+      // });
+      // addMarker({
+      //   coords: {
+      //     lat: 23.6238,
+      //     lng: 90.5000
+      //   }
+      // });
+      // addMarker({
+      //   coords: {
+      //     lat: 23.4607,
+      //     lng: 91.1809
+      //   }
+      // });
 
 
+      // function addMarker(props) {
+      //   var marker = new google.maps.Marker({
+      //     position: props.coords,
+      //     map: map,
+      //     icon: props.icon
+      //   })
+      // }
+
+      var markers = [{
+          coords: {
+            lat: 23.8103,
+            lng: 90.4125
+          },
+          icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+
+        },
+        {
+          coords: {
+            lat: 23.6238,
+            lng: 90.5000
+          },
+          content: '<h2>Narayangonj</h2>'
+        },
+        {
+          coords: {
+            lat: 23.4607,
+            lng: 91.1809
+          }
+        },
+      ];
+
+      for (var i = 0; i <= markers.length; i++) {
+        addMarker(markers[i]);
+      }
 
 
+      function addMarker(props) {
+        var marker = new google.maps.Marker({
+          position: props.coords,
+          map: map,
+          icon: props.icon
+        })
+      }
 
+      if (props.icon) {
+        marker.setIcon(props.icon)
+      }
+      if (props.content) {
+        var infoWindow = new google.maps.infoWindow({
+          content: props.content
+        })
+      }
 
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO17cPBWtPmRdPSILiRjqZjtmbZ1lLyL8&callback=initMap"
+    async defer></script>
 
 
 

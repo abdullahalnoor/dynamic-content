@@ -48,8 +48,7 @@ class BlogController extends Controller
          $blog->name = $request->name;   
          $blog->title = $request->title;  
          $blog->save();
-         $blog->tags()->detach();
-         $blog->tags()->sync($request->tags,false);
+         $blog->tags()->sync($request->tags,true);
          return back(); 
     } 
 

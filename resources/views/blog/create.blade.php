@@ -20,7 +20,7 @@
 
       <div class="form-group">
         <label for="">tag</label>
-        <select class="js-example-basic-multiple form-control" name="tag[]" multiple="multiple">
+        <select class="js-example-basic-multiple form-control" name="tags[]" multiple="multiple">
 
           @foreach ($tags as $item)
               <option value="{{$item->id}}">{{$item->name}}</option>
@@ -53,6 +53,7 @@
 });
 
 </script>
+
 
 
 

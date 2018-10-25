@@ -25,8 +25,9 @@
 
             <tr>
               <td>{{ $item->title}}</td>
-              <td>{!! substr($item->description,0,20) !!} {{ strlen($item->description) > 20?'...':'' }}</td>
-
+              <td>{!! substr(strip_tags($item->description),0,20) !!} {{ strlen(strip_tags($item->description)) > 20?'...':''
+                }}
+              </td>
             </tr>
 
             @empty
